@@ -3,13 +3,17 @@ var retrieveArguments = require('./index.js'),
 
 function namedFunction(name) {}
 describe('retrieve-arguments', function() {
-  var funcNoArgs, funcOneArgs, funcTwoArgs;
+  var funcNoArgs, funcOneArgs, funcTwoArgs, funcOneLineCallingNoArgs, funcOneLineCallingTwoArgs;
   beforeEach(function() {
     funcNoArgs = function() {};
 
     funcOneArgs = function(arg1) {};
 
     funcTwoArgs = function(arg1, arg2, arg3) {};
+
+    funcOneLineCallingNoArgs = function(arg1, arg2) { return funcNoArgs(); };
+
+    funcOneLineCallingTwoArgs = function(arg1, arg2) { return funcTwoArgs(arg1, arg2, 'stuff'); };
   });
 
   it('should fail if no function given', function() {
@@ -27,5 +31,10 @@ describe('retrieve-arguments', function() {
     assert.deepEqual(retrieveArguments(funcOneArgs), ['arg1']);
     assert.deepEqual(retrieveArguments(funcTwoArgs), ['arg1', 'arg2', 'arg3']);
     assert.deepEqual(retrieveArguments(namedFunction), ['name']);
+  });
+
+  it('should work with one-line functions that call other functions', function() {
+    assert.deepEqual(retrieveArguments(funcOneLineCallingNoArgs), ['arg1', 'arg2']);
+    assert.deepEqual(retrieveArguments(funcOneLineCallingTwoArgs), ['arg1', 'arg2']);
   });
 });
