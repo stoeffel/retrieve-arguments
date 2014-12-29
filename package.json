@@ -1,6 +1,6 @@
 {
   "name": "retrieve-arguments",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Retrieves the argumentnames of a function",
   "main": "index.js",
   "scripts": {

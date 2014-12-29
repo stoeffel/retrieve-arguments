@@ -1,5 +1,6 @@
 retrieve-arguments
 ==================
+[![Build Status](https://travis-ci.org/stoeffel/retrieve-arguments.svg)](https://travis-ci.org/stoeffel/retrieve-arguments)
 
 > Retrieves the argumentnames of a function
 
