@@ -1,6 +1,6 @@
 retrieve-arguments
 ==================
-[![Build Status](https://travis-ci.org/stoeffel/retrieve-arguments.svg)](https://travis-ci.org/stoeffel/retrieve-arguments)
+[![Build Status](https://travis-ci.org/stoeffel/retrieve-arguments.svg)](https://travis-ci.org/stoeffel/retrieve-arguments) [![npm version](https://badge.fury.io/js/retrieve-arguments.svg)](http://badge.fury.io/js/retrieve-arguments)
 
 > Retrieves the argumentnames of a function
 
